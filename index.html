@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Horology Vault | Luxury Timepieces — Time, Refined.</title>
+    <meta name="description" content="Discover exceptional timepieces crafted for those who appreciate every passing second. A curated collection of luxury, automatic, chronograph, and dress watches.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            deep: '#0B1F33',
+                            midnight: '#071522',
+                        },
+                        gold: {
+                            champagne: '#C5A059',
+                            soft: '#D8BD82',
+                        },
+                        ivory: {
+                            DEFAULT: '#F4F0E8',
+                            light: '#FAF9F6',
+                        },
+                        slate: {
+                            custom: '#394552',
+                        },
+                        charcoal: {
+                            custom: '#1E252B',
+                        },
+                        border: {
+                            light: '#DDD8CC',
+                        }
+                    },
+                    fontFamily: {
+                        brand: ['Cinzel', 'serif'],
+                        editorial: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --navy-deep: #0B1F33;
+            --navy-midnight: #071522;
+            --off-white: #FAF9F6;
+            --ivory: #F4F0E8;
+            --gold-champagne: #C5A059;
+            --gold-soft: #D8BD82;
+            --slate: #394552;
+            --charcoal: #1E252B;
+            --border-light: #DDD8CC;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--off-white);
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        .font-brand { font-family: 'Cinzel', serif; }
+        .font-editorial { font-family: 'Cormorant Garamond', serif; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F0E8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0B1F33;
+        }
+
+        /* Gold Gradient Text */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D8BD82 0%, #C5A059 50%, #9E7B3A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Gold Shimmer Button Effect */
+        .btn-gold-shimmer {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0B1F33 0%, #071522 100%);
+            border: 1px solid #C5A059;
+            color: #FAF9F6;
+            transition: all 0.4s ease;
+        }
+        .btn-gold-shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.25), transparent);
+            transition: left 0.7s ease;
+        }
+        .btn-gold-shimmer:hover::before {
+            left: 100%;
+        }
+        .btn-gold-shimmer:hover {
+            background: #C5A059;
+            color: #071522;
+            box-shadow: 0 10px 25px -5px rgba(197, 160, 89, 0.4);
+        }
+
+        /* Ken Burns Effect for Hero Slider */
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+        .animate-kenburns {
+            animation: kenburns 20s infinite alternate ease-in-out;
+        }
+
+        /* Loader Clock hand animation */
+        @keyframes clockRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-clock-hour {
+            transform-origin: bottom center;
+            animation: clockRotate 12s linear infinite;
+        }
+        .animate-clock-minute {
+            transform-origin: bottom center;
+            animation: clockRotate 1s linear infinite;
+        }
+
+        /* Print Media Styles for Invoice */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-invoice, #printable-invoice * {
+                visibility: visible;
+            }
+            #printable-invoice {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background: white !important;
+                color: black !important;
+                padding: 20px !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased text-charcoal-custom selection:bg-gold-champagne selection:text-navy-midnight">
+
+    <!-- PRELOADER SCREEN -->
+    <div id="loading-screen" class="fixed inset-0 z-[100] bg-navy-midnight flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="relative w-24 h-24 mb-6 flex items-center justify-center">
+            <svg class="w-24 h-24 text-gold-champagne opacity-40" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                <circle cx="50" cy="50" r="45" stroke-width="1.5"/>
+                <circle cx="50" cy="50" r="40" stroke-width="0.5" stroke-dasharray="2 2"/>
+            </svg>
+            <div class="absolute w-[2px] h-7 bg-gold-champagne animate-clock-minute rounded-full top-[23px] left-[49px]"></div>
+            <div class="absolute w-[3px] h-5 bg-gold-soft animate-clock-hour rounded-full top-[30px] left-[48.5px]"></div>
+            <div class="absolute w-2 h-2 bg-gold-champagne rounded-full top-[49px] left-[49px]"></div>
+        </div>
+        <h1 class="font-brand text-2xl md:text-3xl tracking-[0.3em] text-ivory uppercase mb-2">THE HOROLOGY VAULT</h1>
+        <p class="font-editorial italic text-gold-soft tracking-widest text-sm">TIME, REFINED.</p>
+    </div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div id="announcement-bar" class="bg-navy-midnight text-ivory text-xs tracking-widest uppercase py-2 px-4 border-b border-gold-champagne/20 flex justify-between items-center transition-all duration-300 relative z-40">
+        <div class="flex-1 text-center">
+            <span>Complimentary insured shipping on orders above ₹25,000</span>
+            <span class="mx-3 text-gold-champagne hidden sm:inline">•</span>
+            <span class="hidden sm:inline">2-Year International Warranty on all Timepieces</span>
+        </div>
+        <button onclick="dismissAnnouncement()" class="text-gold-soft hover:text-ivory focus:outline-none ml-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+    </div>
+
+    <!-- MAIN HEADER / NAVIGATION -->
+    <header id="main-header" class="sticky top-0 z-30 transition-all duration-300 bg-navy-deep/95 backdrop-blur-md text-ivory border-b border-gold-champagne/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Mobile Menu Toggle -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-ivory hover:text-gold-champagne focus:outline-none" aria-label="Toggle Navigation Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+
+            <!-- Brand Logo -->
+            <a href="#home" onclick="navigateTo('home')" class="flex flex-col items-center sm:items-start group">
+                <span class="font-brand text-lg sm:text-xl md:text-2xl tracking-[0.25em] text-ivory group-hover:text-gold-champagne transition-colors">THE HOROLOGY VAULT</span>
+                <span class="font-editorial italic text-xs tracking-widest text-gold-champagne/80">TIME, REFINED.</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold tracking-[0.15em] uppercase">
+                <a href="#home" onclick="navigateTo('home')" class="nav-link py-2 border-b-2 border-transparent hover:border-gold-champagne hover:text-gold-champagne transition-all">Home</a>
+                <a href="#shop" onclick="navigateTo('shop')" class="nav-link py-2 border-b-2 border-transparent hover:border-gold-champagne hover:text-gold-champagne transition-all">Collections</a>
+                <a href="#shop" onclick="filterByGender('Men')" class="nav-link py-2 border-b-2 border-transparent hover:border-gold-champagne hover:text-gold-champagne transition-all">Men</a>
+                <a href="#shop" onclick="filterByGender('Women')" class="nav-link py-2 border-b-2 border-transparent hover:border-gold-champagne hover:text-gold-champagne transition-all">Women</a>
+                <a href="#shop" onclick="filterByGender('Children')" class="nav-link py-2 border-b-2 border-transparent hover:border-gold-champagne hover:text-gold-champagne transition-all">Children</a>
+                <a href="#shop" onclick="filterByTag('New')" class="nav-link py-2 border-b-2 border-transparent hover:border-gold-champagne hover:text-gold-champagne transition-all">New Arrivals</a>
+                <a href="#about" onclick="navigateTo('about')" class="nav-link py-2 border-b-2 border-transparent hover:border-gold-champagne hover:text-gold-champagne transition-all">About</a>
+            </nav>
+
+            <!-- Right Utilities Icons -->
+            <div class="flex items-center space-x-5">
+                <!-- Live Search Trigger -->
+                <button onclick="toggleSearchModal()" class="text-ivory hover:text-gold-champagne transition-colors p-1" title="Search Timepieces" aria-label="Search Timepieces">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </button>
+
+                <!-- Admin Analytics Button -->
+                <button onclick="openAdminDashboard()" class="text-ivory hover:text-gold-champagne transition-colors p-1 hidden sm:block" title="Admin Sales Report" aria-label="Admin Sales Report">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                </button>
+
+                <!-- Wishlist Button -->
+                <button onclick="navigateTo('wishlist')" class="relative text-ivory hover:text-gold-champagne transition-colors p-1" title="Wishlist" aria-label="Wishlist">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    <span id="wishlist-badge" class="absolute -top-1.5 -right-2 bg-gold-champagne text-navy-midnight font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+
+                <!-- Shopping Bag/Cart Button -->
+                <button onclick="toggleCartDrawer()" class="relative text-ivory hover:text-gold-champagne transition-colors p-1" title="Vault Cart" aria-label="Vault Cart">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    <span id="cart-badge" class="absolute -top-1.5 -right-2 bg-gold-champagne text-navy-midnight font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-midnight border-b border-gold-champagne/20 px-6 py-6 space-y-4">
+            <a href="#home" onclick="navigateTo('home'); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-ivory hover:text-gold-champagne">Home</a>
+            <a href="#shop" onclick="navigateTo('shop'); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-ivory hover:text-gold-champagne">All Timepieces</a>
+            <a href="#shop" onclick="filterByGender('Men'); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-ivory hover:text-gold-champagne">Men's Collection</a>
+            <a href="#shop" onclick="filterByGender('Women'); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-ivory hover:text-gold-champagne">Women's Collection</a>
+            <a href="#shop" onclick="filterByGender('Children'); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-ivory hover:text-gold-champagne">Children's Collection</a>
+            <a href="#shop" onclick="filterByTag('New'); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-ivory hover:text-gold-champagne">New Arrivals</a>
+            <a href="#calculators" onclick="navigateTo('home'); scrollToCalculators(); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-ivory hover:text-gold-champagne">Investment Calculator</a>
+            <a href="#about" onclick="navigateTo('about'); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-ivory hover:text-gold-champagne">About Heritage</a>
+            <a href="#admin" onclick="openAdminDashboard(); toggleMobileMenu()" class="block text-sm uppercase tracking-widest text-gold-champagne">Demo Sales Dashboard</a>
+        </div>
+    </header>
+
+    <!-- MAIN APP VIEW CONTAINERS -->
+    <main id="app-content" class="min-h-screen">
+        
+        <!-- ================= PAGE 1: HOME PAGE ================= -->
+        <section id="view-home" class="page-view">
+            
+            <!-- HERO SLIDER SECTION -->
+            <div class="relative bg-navy-midnight text-ivory overflow-hidden h-[85vh] min-h-[600px] flex items-center">
+                <!-- Slider Item 1 -->
+                <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-10 flex items-center">
+                    <div class="absolute inset-0 bg-gradient-to-r from-navy-midnight via-navy-midnight/80 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1920&auto=format&fit=crop" alt="Luxury Gold Chronograph" class="absolute inset-0 w-full h-full object-cover animate-kenburns opacity-60">
+                    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-20 space-y-6 max-w-2xl">
+                        <p class="text-gold-champagne text-xs font-semibold tracking-[0.3em] uppercase">THE HOROLOGY VAULT</p>
+                        <h2 class="font-brand text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                            THE ART OF <br><span class="gold-gradient-text">PRECISION</span>
+                        </h2>
+                        <p class="font-editorial text-xl md:text-2xl text-ivory/90 leading-relaxed italic">
+                            Exceptional mechanics. Timeless design. Handcrafted for those who value every second.
+                        </p>
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <a href="#shop" onclick="navigateTo('shop')" class="btn-gold-shimmer px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold rounded-sm">
+                                Explore Collection
+                            </a>
+                            <a href="#about" onclick="navigateTo('about')" class="px-8 py-4 border border-ivory/40 text-xs tracking-[0.2em] uppercase font-bold text-ivory hover:border-gold-champagne hover:text-gold-champagne transition-all rounded-sm">
+                                Our Story
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide Controls -->
+                <div class="absolute bottom-8 right-8 z-20 flex items-center space-x-4">
+                    <button onclick="prevHeroSlide()" class="p-3 border border-gold-champagne/40 text-gold-champagne hover:bg-gold-champagne hover:text-navy-midnight transition-all rounded-full" aria-label="Previous Slide">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button onclick="nextHeroSlide()" class="p-3 border border-gold-champagne/40 text-gold-champagne hover:bg-gold-champagne hover:text-navy-midnight transition-all rounded-full" aria-label="Next Slide">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CATEGORY TILES SECTION -->
+            <section class="py-20 bg-ivory-light">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                        <p class="text-gold-champagne text-xs font-semibold tracking-[0.25em] uppercase">CURATED SELECTION</p>
+                        <h2 class="font-brand text-3xl sm:text-4xl text-navy-deep uppercase tracking-wider">Explore The Collections</h2>
+                        <div class="w-16 h-[2px] bg-gold-champagne mx-auto"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Category Card 1 -->
+                        <div onclick="filterByCategory('Automatic')" class="group relative h-80 overflow-hidden cursor-pointer shadow-md rounded-sm border border-border-light">
+                            <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=800&auto=format&fit=crop" alt="Automatic Watches" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-midnight/90 via-navy-midnight/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="font-brand text-xl text-ivory uppercase tracking-widest">Automatic</h3>
+                                <p class="text-xs text-gold-soft mt-1">Self-winding mechanical masterpieces</p>
+                                <span class="text-[11px] uppercase tracking-widest text-ivory font-semibold mt-4 group-hover:text-gold-champagne transition-colors flex items-center">
+                                    Discover <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Category Card 2 -->
+                        <div onclick="filterByCategory('Chronograph')" class="group relative h-80 overflow-hidden cursor-pointer shadow-md rounded-sm border border-border-light">
+                            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="Chronographs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-midnight/90 via-navy-midnight/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="font-brand text-xl text-ivory uppercase tracking-widest">Chronographs</h3>
+                                <p class="text-xs text-gold-soft mt-1">Precision timing & athletic elegance</p>
+                                <span class="text-[11px] uppercase tracking-widest text-ivory font-semibold mt-4 group-hover:text-gold-champagne transition-colors flex items-center">
+                                    Discover <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Category Card 3 -->
+                        <div onclick="filterByCategory('Dress')" class="group relative h-80 overflow-hidden cursor-pointer shadow-md rounded-sm border border-border-light">
+                            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop" alt="Dress Watches" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-midnight/90 via-navy-midnight/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="font-brand text-xl text-ivory uppercase tracking-widest">Dress Watches</h3>
+                                <p class="text-xs text-gold-soft mt-1">Sleek silhouettes for formal occasions</p>
+                                <span class="text-[11px] uppercase tracking-widest text-ivory font-semibold mt-4 group-hover:text-gold-champagne transition-colors flex items-center">
+                                    Discover <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Category Card 4 -->
+                        <div onclick="filterByCategory('Luxury')" class="group relative h-80 overflow-hidden cursor-pointer shadow-md rounded-sm border border-border-light">
+                            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop" alt="Grand Complications" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-midnight/90 via-navy-midnight/30 to-transparent flex flex-col justify-end p-6">
+                                <h3 class="font-brand text-xl text-ivory uppercase tracking-widest">Grand Luxury</h3>
+                                <p class="text-xs text-gold-soft mt-1">Ultra-exclusive horological marvels</p>
+                                <span class="text-[11px] uppercase tracking-widest text-ivory font-semibold mt-4 group-hover:text-gold-champagne transition-colors flex items-center">
+                                    Discover <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEATURED TIMEPIECES GRID -->
+            <section class="py-20 bg-ivory">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                        <div>
+                            <p class="text-gold-champagne text-xs font-semibold tracking-[0.25em] uppercase">HANDPICKED EXCELLENCE</p>
+                            <h2 class="font-brand text-3xl sm:text-4xl text-navy-deep uppercase tracking-wider mt-1">Curated Timepieces</h2>
+                        </div>
+                        <a href="#shop" onclick="navigateTo('shop')" class="mt-4 md:mt-0 text-xs font-bold uppercase tracking-[0.2em] text-navy-deep hover:text-gold-champagne transition-colors flex items-center">
+                            View All Timepieces (20)
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Products Dynamic Grid -->
+                    <div id="home-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- LIMITED EDITION COUNTDOWN BANNER -->
+            <section class="py-24 bg-navy-midnight text-ivory relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#C5A059 1px, transparent 1px); background-size: 24px 24px;"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <span class="inline-block px-3 py-1 bg-gold-champagne/10 border border-gold-champagne/40 text-gold-champagne text-xs uppercase tracking-widest rounded-sm">
+                            THE VAULT COLLECTION
+                        </span>
+                        <h2 class="font-brand text-3xl sm:text-5xl tracking-tight leading-tight">
+                            LIMITED EDITION <br><span class="gold-gradient-text">ASTRONOMIA TOURBILLON</span>
+                        </h2>
+                        <p class="font-editorial text-lg text-ivory/80 leading-relaxed">
+                            A extraordinary convergence of cosmic mechanics and gold horology. Only 12 numbered pieces manufactured worldwide.
+                        </p>
+                        
+                        <!-- Live Countdown JS -->
+                        <div class="grid grid-cols-4 gap-4 py-4 max-w-md text-center">
+                            <div class="bg-navy-deep/80 border border-gold-champagne/30 p-3 rounded-sm">
+                                <span id="cd-days" class="font-brand text-2xl sm:text-3xl text-gold-champagne block">02</span>
+                                <span class="text-[10px] uppercase text-ivory/60 tracking-widest">Days</span>
+                            </div>
+                            <div class="bg-navy-deep/80 border border-gold-champagne/30 p-3 rounded-sm">
+                                <span id="cd-hours" class="font-brand text-2xl sm:text-3xl text-gold-champagne block">14</span>
+                                <span class="text-[10px] uppercase text-ivory/60 tracking-widest">Hours</span>
+                            </div>
+                            <div class="bg-navy-deep/80 border border-gold-champagne/30 p-3 rounded-sm">
+                                <span id="cd-mins" class="font-brand text-2xl sm:text-3xl text-gold-champagne block">32</span>
+                                <span class="text-[10px] uppercase text-ivory/60 tracking-widest">Mins</span>
+                            </div>
+                            <div class="bg-navy-deep/80 border border-gold-champagne/30 p-3 rounded-sm">
+                                <span id="cd-secs" class="font-brand text-2xl sm:text-3xl text-gold-champagne block">18</span>
+                                <span class="text-[10px] uppercase text-ivory/60 tracking-widest">Secs</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button onclick="openProductQuickView(1)" class="btn-gold-shimmer px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase rounded-sm">
+                                Reserve Serial #04 (₹4,99,999)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center">
+                        <div class="w-80 h-80 sm:w-96 sm:h-96 rounded-full border border-gold-champagne/30 flex items-center justify-center p-4 relative">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop" alt="Astronomia Limited Watch" class="w-full h-full object-cover rounded-full shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INVESTMENT & WATCH PRICE CALCULATOR SECTION -->
+            <section id="calculators" class="py-20 bg-ivory-light border-t border-border-light">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                        <p class="text-gold-champagne text-xs font-semibold tracking-[0.25em] uppercase">HOROLOGICAL VALUATION</p>
+                        <h2 class="font-brand text-3xl sm:text-4xl text-navy-deep uppercase tracking-wider">Precision Calculators</h2>
+                        <div class="w-16 h-[2px] bg-gold-champagne mx-auto"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Investment Calculator -->
+                        <div class="bg-white p-8 rounded-sm shadow-md border border-border-light space-y-6">
+                            <div class="border-b border-border-light pb-4">
+                                <h3 class="font-brand text-xl text-navy-deep uppercase tracking-wider">Luxury Watch Investment Calculator</h3>
+                                <p class="text-xs text-slate-custom mt-1">Estimate projected appreciation over time for rare timepieces.</p>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs uppercase font-bold tracking-wider text-navy-deep mb-2">Purchase Price (₹)</label>
+                                    <input type="number" id="calc-price" value="249999" class="w-full px-4 py-3 border border-border-light text-sm focus:border-gold-champagne focus:outline-none rounded-sm">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold tracking-wider text-navy-deep mb-2">Est. Annual Rate (%)</label>
+                                        <input type="number" id="calc-rate" value="6.5" step="0.5" class="w-full px-4 py-3 border border-border-light text-sm focus:border-gold-champagne focus:outline-none rounded-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold tracking-wider text-navy-deep mb-2">Holding (Years)</label>
+                                        <input type="number" id="calc-years" value="5" min="1" max="30" class="w-full px-4 py-3 border border-border-light text-sm focus:border-gold-champagne focus:outline-none rounded-sm">
+                                    </div>
+                                </div>
+
+                                <button onclick="calculateInvestment()" class="w-full py-3 bg-navy-deep text-ivory text-xs uppercase font-bold tracking-[0.15em] hover:bg-gold-champagne hover:text-navy-midnight transition-colors rounded-sm">
+                                    Calculate Projected Value
+                                </button>
+
+                                <div class="bg-ivory p-4 rounded-sm border border-gold-champagne/30 grid grid-cols-2 gap-4 text-center mt-4">
+                                    <div>
+                                        <span class="text-[10px] uppercase tracking-widest text-slate-custom block">Projected Value</span>
+                                        <span id="res-future-val" class="font-brand text-lg text-navy-deep font-bold">₹3,42,520</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] uppercase tracking-widest text-slate-custom block">Estimated Profit</span>
+                                        <span id="res-profit" class="font-brand text-lg text-gold-champagne font-bold">+₹92,521</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price Breakdown Calculator -->
+                        <div class="bg-white p-8 rounded-sm shadow-md border border-border-light space-y-6">
+                            <div class="border-b border-border-light pb-4">
+                                <h3 class="font-brand text-xl text-navy-deep uppercase tracking-wider">Duty & Price Breakdown Calculator</h3>
+                                <p class="text-xs text-slate-custom mt-1">Calculate exact landed prices including GST and insurance.</p>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold tracking-wider text-navy-deep mb-2">Base Price (₹)</label>
+                                        <input type="number" id="calc-base" value="124999" class="w-full px-4 py-3 border border-border-light text-sm focus:border-gold-champagne focus:outline-none rounded-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold tracking-wider text-navy-deep mb-2">Discount (%)</label>
+                                        <input type="number" id="calc-disc" value="10" class="w-full px-4 py-3 border border-border-light text-sm focus:border-gold-champagne focus:outline-none rounded-sm">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold tracking-wider text-navy-deep mb-2">GST Rate (%)</label>
+                                        <input type="number" id="calc-gst" value="18" disabled class="w-full px-4 py-3 border border-border-light text-sm bg-gray-100 text-slate-custom rounded-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase font-bold tracking-wider text-navy-deep mb-2">Insured Delivery (₹)</label>
+                                        <select id="calc-ship" class="w-full px-4 py-3 border border-border-light text-sm focus:border-gold-champagne focus:outline-none rounded-sm">
+                                            <option value="0">Complimentary (Orders >25k)</option>
+                                            <option value="499">Standard (₹499)</option>
+                                            <option value="999">Express (₹999)</option>
+                                            <option value="1499">Premium Vault Delivery (₹1,499)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button onclick="calculatePriceBreakdown()" class="w-full py-3 bg-navy-deep text-ivory text-xs uppercase font-bold tracking-[0.15em] hover:bg-gold-champagne hover:text-navy-midnight transition-colors rounded-sm">
+                                    Calculate Total Payable
+                                </button>
+
+                                <div class="bg-navy-midnight text-ivory p-4 rounded-sm border border-gold-champagne/30 flex justify-between items-center mt-4">
+                                    <span class="text-xs uppercase tracking-widest text-gold-soft">Net Payable Amount:</span>
+                                    <span id="res-total-payable" class="font-brand text-2xl text-gold-champagne font-bold">₹1,32,748</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EDITORIAL BRAND STORY -->
+            <section class="py-24 bg-navy-midnight text-ivory relative overflow-hidden">
+                <div class="max-w-5xl mx-auto px-6 text-center space-y-8">
+                    <p class="text-gold-champagne text-xs font-semibold tracking-[0.3em] uppercase">HERITAGE & CRAFTSMANSHIP</p>
+                    <h2 class="font-brand text-3xl sm:text-5xl leading-tight">Born From an Obsession With Precision</h2>
+                    <p class="font-editorial text-xl sm:text-2xl text-ivory/80 leading-relaxed italic max-w-3xl mx-auto">
+                        "At The Horology Vault, time is not merely measured; it is honored. Each piece in our vault represents decades of mechanical ingenuity, high-grade alloys, and immaculate hand-finishing."
+                    </p>
+                    <div class="pt-4">
+                        <a href="#about" onclick="navigateTo('about')" class="inline-block border-b-2 border-gold-champagne pb-1 text-xs uppercase tracking-[0.2em] font-bold text-gold-champagne hover:text-ivory transition-colors">
+                            Read Our Complete Manifesto &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ================= PAGE 2: SHOP / CATALOG PAGE ================= -->
+        <section id="view-shop" class="page-view hidden py-12 bg-ivory">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Shop Page Header -->
+                <div class="border-b border-border-light pb-8 mb-8 flex flex-col md:flex-row md:items-end justify-between">
+                    <div>
+                        <p class="text-gold-champagne text-xs font-semibold tracking-[0.25em] uppercase">THE CATALOG</p>
+                        <h1 class="font-brand text-3xl sm:text-4xl text-navy-deep uppercase tracking-wider mt-1">Curated Collections</h1>
+                    </div>
+                    <div id="shop-active-count" class="text-xs text-slate-custom uppercase tracking-wider mt-2 md:mt-0">
+                        Showing 20 Timepieces
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Filters Sidebar -->
+                    <div class="bg-white p-6 rounded-sm border border-border-light shadow-sm space-y-6 h-fit">
+                        <div class="flex items-center justify-between border-b border-border-light pb-4">
+                            <h3 class="font-brand text-sm uppercase font-bold tracking-widest text-navy-deep">Refine Vault</h3>
+                            <button onclick="resetFilters()" class="text-[11px] uppercase text-gold-champagne hover:underline">Reset</button>
+                        </div>
+
+                        <!-- Search Filter -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-custom mb-2">Search Model or SKU</label>
+                            <input type="text" id="filter-search" oninput="applyFilters()" placeholder="e.g. Chrono, Gold..." class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                        </div>
+
+                        <!-- Gender Filter -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-custom mb-2">Audience</label>
+                            <select id="filter-gender" onchange="applyFilters()" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                <option value="All">All Audiences</option>
+                                <option value="Men">Men</option>
+                                <option value="Women">Women</option>
+                                <option value="Children">Children</option>
+                            </select>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-custom mb-2">Category Style</label>
+                            <select id="filter-category" onchange="applyFilters()" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                <option value="All">All Styles</option>
+                                <option value="Automatic">Automatic</option>
+                                <option value="Chronograph">Chronograph</option>
+                                <option value="Dress">Dress</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Luxury">Luxury</option>
+                            </select>
+                        </div>
+
+                        <!-- Price Range Slider Filter -->
+                        <div>
+                            <div class="flex justify-between text-xs text-slate-custom mb-2">
+                                <span class="uppercase tracking-wider">Max Price:</span>
+                                <span id="price-slider-val" class="font-bold text-navy-deep">₹5,00,000</span>
+                            </div>
+                            <input type="range" id="filter-price" min="20000" max="500000" step="10000" value="500000" oninput="updatePriceSlider(this.value); applyFilters()" class="w-full accent-gold-champagne cursor-pointer">
+                        </div>
+
+                        <!-- Movement Filter -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-custom mb-2">Movement Type</label>
+                            <select id="filter-movement" onchange="applyFilters()" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                <option value="All">All Movements</option>
+                                <option value="Automatic">Swiss Automatic</option>
+                                <option value="Quartz">Swiss Quartz</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Main Products Display Column -->
+                    <div class="lg:col-span-3 space-y-6">
+                        
+                        <!-- Toolbar (Sorting & Layout) -->
+                        <div class="bg-white p-4 rounded-sm border border-border-light flex justify-between items-center text-xs">
+                            <div class="flex items-center space-x-2">
+                                <span class="uppercase tracking-wider text-slate-custom">Sort By:</span>
+                                <select id="shop-sort" onchange="applyFilters()" class="px-3 py-1.5 border border-border-light focus:border-gold-champagne focus:outline-none rounded-sm">
+                                    <option value="featured">Featured First</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Customer Rating</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Shop Products Grid -->
+                        <div id="shop-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- JS Populated -->
+                        </div>
+
+                        <!-- Empty State if no results -->
+                        <div id="shop-empty-state" class="hidden text-center py-16 bg-white border border-border-light rounded-sm space-y-4">
+                            <svg class="w-12 h-12 text-gold-champagne mx-auto opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                            <h3 class="font-brand text-lg text-navy-deep">No timepieces found in the Vault</h3>
+                            <p class="text-xs text-slate-custom">Try adjusting your filters or price range criteria.</p>
+                            <button onclick="resetFilters()" class="btn-gold-shimmer px-6 py-2.5 text-xs font-bold uppercase rounded-sm">Reset All Filters</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: WISHLIST PAGE ================= -->
+        <section id="view-wishlist" class="page-view hidden py-12 bg-ivory">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                <div class="border-b border-border-light pb-6">
+                    <p class="text-gold-champagne text-xs font-semibold tracking-[0.25em] uppercase">SAVED TIMEPIECES</p>
+                    <h1 class="font-brand text-3xl text-navy-deep uppercase tracking-wider mt-1">Your Personal Vault Wishlist</h1>
+                </div>
+
+                <div id="wishlist-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Populated JS -->
+                </div>
+
+                <div id="wishlist-empty" class="hidden text-center py-20 bg-white border border-border-light rounded-sm space-y-4">
+                    <svg class="w-12 h-12 text-gold-champagne mx-auto opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    <h3 class="font-brand text-xl text-navy-deep">Your Wishlist is Empty</h3>
+                    <p class="text-xs text-slate-custom">Save your favorite watches to revisit them later.</p>
+                    <a href="#shop" onclick="navigateTo('shop')" class="btn-gold-shimmer inline-block px-8 py-3 text-xs font-bold uppercase rounded-sm">
+                        Explore Vault Catalog
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: MULTI-STEP CHECKOUT PAGE ================= -->
+        <section id="view-checkout" class="page-view hidden py-12 bg-ivory">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                <div class="text-center space-y-2">
+                    <p class="text-gold-champagne text-xs font-semibold tracking-[0.25em] uppercase">SECURE ORDER PROTOCOL</p>
+                    <h1 class="font-brand text-3xl text-navy-deep uppercase tracking-wider">Vault Express Checkout</h1>
+                    <p class="text-xs text-amber-700 bg-amber-50 border border-amber-200 inline-block px-4 py-1.5 rounded-sm font-medium">
+                        ⓘ Demo checkout — no real payment will be processed.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    
+                    <!-- Form Steps Left -->
+                    <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-sm border border-border-light shadow-sm space-y-8">
+                        
+                        <!-- Step 1: Customer Info -->
+                        <div class="space-y-4">
+                            <h3 class="font-brand text-lg text-navy-deep uppercase border-b border-border-light pb-2 flex justify-between items-center">
+                                <span>1. Personal Information</span>
+                                <span class="text-xs text-gold-champagne font-sans font-bold">Step 1 of 4</span>
+                            </h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase text-slate-custom mb-1">First Name *</label>
+                                    <input type="text" id="chk-fname" value="Alexander" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase text-slate-custom mb-1">Last Name *</label>
+                                    <input type="text" id="chk-lname" value="Wright" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase text-slate-custom mb-1">Email Address *</label>
+                                    <input type="email" id="chk-email" value="alex.wright@example.com" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase text-slate-custom mb-1">Phone Number *</label>
+                                    <input type="tel" id="chk-phone" value="+91 98765 43210" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Shipping Address -->
+                        <div class="space-y-4">
+                            <h3 class="font-brand text-lg text-navy-deep uppercase border-b border-border-light pb-2">2. Shipping Destination</h3>
+                            <div>
+                                <label class="block text-xs uppercase text-slate-custom mb-1">Street Address *</label>
+                                <input type="text" id="chk-address" value="42 Platinum Towers, Worli Sea Face" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                            </div>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase text-slate-custom mb-1">City *</label>
+                                    <input type="text" id="chk-city" value="Mumbai" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase text-slate-custom mb-1">State *</label>
+                                    <input type="text" id="chk-state" value="Maharashtra" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase text-slate-custom mb-1">PIN Code *</label>
+                                    <input type="text" id="chk-pin" value="400018" class="w-full px-3 py-2 border border-border-light text-xs focus:border-gold-champagne focus:outline-none rounded-sm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Payment Method -->
+                        <div class="space-y-4">
+                            <h3 class="font-brand text-lg text-navy-deep uppercase border-b border-border-light pb-2">3. Payment Gateway Simulation</h3>
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <label class="border border-gold-champagne p-3 rounded-sm flex items-center space-x-2 cursor-pointer bg-gold-champagne/5">
+                                    <input type="radio" name="paymethod" value="card" checked class="accent-gold-champagne">
+                                    <span class="font-bold text-navy-deep">Credit / Debit Card</span>
+                                </label>
+                                <label class="border border-border-light p-3 rounded-sm flex items-center space-x-2 cursor-pointer hover:border-gold-champagne">
+                                    <input type="radio" name="paymethod" value="upi" class="accent-gold-champagne">
+                                    <span class="font-bold text-navy-deep">UPI / NetBanking</span>
+                                </label>
+                            </div>
+
+                            <div class="p-4 bg-ivory rounded-sm border border-border-light space-y-3">
+                                <div>
+                                    <label class="block text-[11px] uppercase text-slate-custom mb-1">Card Number (Simulated)</label>
+                                    <input type="text" value="4532 •••• •••• 8892" class="w-full px-3 py-2 border border-border-light text-xs bg-white rounded-sm">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-[11px] uppercase text-slate-custom mb-1">Expiry Date</label>
+                                        <input type="text" value="11/28" class="w-full px-3 py-2 border border-border-light text-xs bg-white rounded-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] uppercase text-slate-custom mb-1">CVV</label>
+                                        <input type="password" value="•••" class="w-full px-3 py-2 border border-border-light text-xs bg-white rounded-sm">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="processOrderPlacement()" class="btn-gold-shimmer w-full py-4 text-xs font-bold uppercase tracking-[0.2em] rounded-sm">
+                            Place Secure Order Now
+                        </button>
+                    </div>
+
+                    <!-- Order Summary Right -->
+                    <div class="lg:col-span-5 bg-navy-midnight text-ivory p-6 sm:p-8 rounded-sm space-y-6 h-fit border border-gold-champagne/30">
+                        <h3 class="font-brand text-lg uppercase tracking-wider text-gold-champagne border-b border-gold-champagne/20 pb-3">
+                            Order Summary
+                        </h3>
+
+                        <!-- Items List in Summary -->
+                        <div id="checkout-summary-items" class="space-y-4 max-h-60 overflow-y-auto pr-2">
+                            <!-- JS Populated -->
+                        </div>
+
+                        <!-- Price Breakdown Calculations -->
+                        <div class="space-y-2 border-t border-gold-champagne/20 pt-4 text-xs">
+                            <div class="flex justify-between text-ivory/80">
+                                <span>Subtotal</span>
+                                <span id="chk-subtotal">₹0</span>
+                            </div>
+                            <div class="flex justify-between text-emerald-400">
+                                <span>Coupon Discount</span>
+                                <span id="chk-discount">-₹0</span>
+                            </div>
+                            <div class="flex justify-between text-ivory/80">
+                                <span>Estimated GST (18%)</span>
+                                <span id="chk-gst">₹0</span>
+                            </div>
+                            <div class="flex justify-between text-ivory/80">
+                                <span>Insured Shipping</span>
+                                <span id="chk-shipping">Complimentary</span>
+                            </div>
+                            <div class="border-t border-gold-champagne/40 pt-3 flex justify-between text-sm font-bold text-gold-champagne">
+                                <span class="uppercase tracking-wider">Grand Total</span>
+                                <span id="chk-grandtotal" class="font-brand text-xl">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 5: ORDER CONFIRMATION PAGE ================= -->
+        <section id="view-confirmation" class="page-view hidden py-16 bg-ivory">
+            <div class="max-w-3xl mx-auto px-4 text-center space-y-6">
+                <div class="w-20 h-20 bg-gold-champagne/10 border-2 border-gold-champagne rounded-full flex items-center justify-center mx-auto text-gold-champagne">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+
+                <p class="text-gold-champagne text-xs font-semibold tracking-[0.3em] uppercase">TRANSACTION SUCCESSFUL</p>
+                <h1 class="font-brand text-3xl sm:text-4xl text-navy-deep uppercase tracking-wider">ORDER CONFIRMED</h1>
+                <p class="font-editorial text-lg text-slate-custom italic">
+                    Thank you for choosing The Horology Vault. Your timepiece is being prepared in our climate-controlled vault for insured transit.
+                </p>
+
+                <div class="bg-white p-6 rounded-sm border border-border-light text-left text-xs space-y-3">
+                    <div class="flex justify-between border-b border-border-light pb-2">
+                        <span class="text-slate-custom uppercase">Order Reference:</span>
+                        <span id="conf-order-id" class="font-bold text-navy-deep font-mono">THV-2026-847291</span>
+                    </div>
+                    <div class="flex justify-between border-b border-border-light pb-2">
+                        <span class="text-slate-custom uppercase">Estimated Delivery:</span>
+                        <span class="font-bold text-navy-deep">2-3 Business Days (Insured)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-border-light pb-2">
+                        <span class="text-slate-custom uppercase">Total Paid:</span>
+                        <span id="conf-total" class="font-bold text-gold-champagne font-brand text-base">₹0</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <button onclick="openInvoiceModal()" class="btn-gold-shimmer px-6 py-3 text-xs font-bold uppercase rounded-sm">
+                        View / Print Tax Invoice
+                    </button>
+                    <a href="#shop" onclick="navigateTo('shop')" class="px-6 py-3 border border-navy-deep text-xs font-bold uppercase text-navy-deep hover:bg-navy-deep hover:text-ivory transition-colors rounded-sm">
+                        Continue Browsing Catalog
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 6: ABOUT BRAND PAGE ================= -->
+        <section id="view-about" class="page-view hidden py-16 bg-ivory">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <div class="text-center space-y-3">
+                    <p class="text-gold-champagne text-xs font-semibold tracking-[0.25em] uppercase">HOROLOGICAL MANIFESTO</p>
+                    <h1 class="font-brand text-4xl text-navy-deep uppercase tracking-wider">The Story of The Vault</h1>
+                    <div class="w-16 h-[2px] bg-gold-champagne mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Watchmaker Atelier" class="w-full h-96 object-cover rounded-sm shadow-md border border-border-light">
+                    <div class="space-y-4">
+                        <h2 class="font-brand text-2xl text-navy-deep">Curating Horological Mastery</h2>
+                        <p class="font-editorial text-lg text-slate-custom leading-relaxed italic">
+                            Founded with a singular commitment to Swiss horological craftsmanship and timeless design, The Horology Vault offers watch collectors access to rare, authenticated timepieces.
+                        </p>
+                        <p class="text-xs text-slate-custom leading-relaxed">
+                            Each timepiece passing through our vault undergoes a rigorous 24-point inspection process by certified master horologists, verifying movement tolerances, water resistance, and case integrity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SLIDE-OUT CART DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+        <div id="cart-backdrop" onclick="toggleCartDrawer()" class="absolute inset-0 bg-navy-midnight/60 backdrop-blur-sm"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div id="cart-panel" class="w-screen max-w-md bg-white border-l border-border-light shadow-2xl flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300">
+                
+                <!-- Drawer Header -->
+                <div class="p-6 bg-navy-midnight text-ivory flex justify-between items-center border-b border-gold-champagne/20">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-gold-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                        <h2 class="font-brand text-lg uppercase tracking-wider text-ivory">Vault Cart</h2>
+                    </div>
+                    <button onclick="toggleCartDrawer()" class="text-gold-soft hover:text-ivory">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+
+                <!-- Cart Items Container -->
+                <div id="cart-drawer-items" class="flex-1 overflow-y-auto p-6 space-y-6 divide-y divide-border-light">
+                    <!-- JS Populated -->
+                </div>
+
+                <!-- Drawer Footer Summary -->
+                <div class="p-6 bg-ivory border-t border-border-light space-y-4">
+                    <!-- Coupon Input -->
+                    <div class="flex space-x-2">
+                        <input type="text" id="coupon-code-input" placeholder="Coupon (e.g. HOROLOGY10)" class="flex-1 px-3 py-2 border border-border-light text-xs uppercase focus:border-gold-champagne focus:outline-none rounded-sm">
+                        <button onclick="applyCoupon()" class="px-4 py-2 bg-navy-deep text-ivory text-xs font-bold uppercase hover:bg-gold-champagne hover:text-navy-midnight transition-colors rounded-sm">
+                            Apply
+                        </button>
+                    </div>
+
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between text-slate-custom">
+                            <span>Subtotal</span>
+                            <span id="cart-drawer-subtotal">₹0</span>
+                        </div>
+                        <div class="flex justify-between text-emerald-600 font-medium">
+                            <span>Discount</span>
+                            <span id="cart-drawer-discount">-₹0</span>
+                        </div>
+                        <div class="flex justify-between text-slate-custom">
+                            <span>GST (18%)</span>
+                            <span id="cart-drawer-gst">₹0</span>
+                        </div>
+                        <div class="border-t border-border-light pt-2 flex justify-between text-sm font-bold text-navy-deep">
+                            <span class="uppercase">Estimated Total</span>
+                            <span id="cart-drawer-grandtotal" class="font-brand text-base">₹0</span>
+                        </div>
+                    </div>
+
+                    <button onclick="toggleCartDrawer(); navigateTo('checkout')" class="btn-gold-shimmer w-full py-3 text-xs font-bold uppercase tracking-[0.15em] rounded-sm">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH OVERLAY MODAL -->
+    <div id="search-modal" class="fixed inset-0 z-50 bg-navy-midnight/90 backdrop-blur-md hidden flex flex-col items-center justify-start pt-20 px-4">
+        <button onclick="toggleSearchModal()" class="absolute top-8 right-8 text-gold-champagne hover:text-ivory">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="w-full max-w-2xl space-y-6">
+            <h2 class="font-brand text-2xl text-ivory uppercase tracking-wider text-center">Search The Vault Catalog</h2>
+            <div class="relative">
+                <input type="text" id="live-search-input" oninput="handleLiveSearch(this.value)" placeholder="Search by model, brand, chronograph, automatic..." class="w-full px-6 py-4 bg-navy-deep text-ivory placeholder-ivory/50 border border-gold-champagne/40 rounded-sm text-base focus:outline-none focus:border-gold-champagne">
+            </div>
+            <div id="live-search-results" class="bg-white rounded-sm border border-border-light max-h-96 overflow-y-auto divide-y divide-border-light hidden">
+                <!-- JS Populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK VIEW MODAL -->
+    <div id="quickview-modal" class="fixed inset-0 z-50 bg-navy-midnight/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-4xl rounded-sm shadow-2xl border border-border-light overflow-hidden relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeQuickViewModal()" class="absolute top-4 right-4 text-navy-deep hover:text-gold-champagne z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div id="quickview-content" class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+                <!-- JS Populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO ADMIN SALES REPORT MODAL -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-navy-midnight/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-5xl rounded-sm shadow-2xl border border-border-light overflow-hidden p-8 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b border-border-light pb-4">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gold-champagne font-bold">DEMO EXECUTIVE METRICS</span>
+                    <h2 class="font-brand text-2xl text-navy-deep uppercase">Horology Vault Sales Dashboard</h2>
+                </div>
+                <button onclick="closeAdminDashboard()" class="text-navy-deep hover:text-gold-champagne">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                <div class="bg-ivory p-4 rounded-sm border border-border-light">
+                    <span class="text-[10px] uppercase tracking-widest text-slate-custom block">Total Gross Revenue</span>
+                    <span class="font-brand text-xl text-navy-deep font-bold">₹18,45,750</span>
+                </div>
+                <div class="bg-ivory p-4 rounded-sm border border-border-light">
+                    <span class="text-[10px] uppercase tracking-widest text-slate-custom block">Total Vault Orders</span>
+                    <span class="font-brand text-xl text-navy-deep font-bold">128</span>
+                </div>
+                <div class="bg-ivory p-4 rounded-sm border border-border-light">
+                    <span class="text-[10px] uppercase tracking-widest text-slate-custom block">Timepieces Sold</span>
+                    <span class="font-brand text-xl text-navy-deep font-bold">214</span>
+                </div>
+                <div class="bg-ivory p-4 rounded-sm border border-border-light">
+                    <span class="text-[10px] uppercase tracking-widest text-slate-custom block">Avg. Order Value</span>
+                    <span class="font-brand text-xl text-gold-champagne font-bold">₹1,44,200</span>
+                </div>
+            </div>
+
+            <!-- SVG Visual Revenue Chart -->
+            <div class="border border-border-light p-6 rounded-sm space-y-3">
+                <h3 class="font-brand text-sm uppercase text-navy-deep">Monthly Sales Revenue Trend</h3>
+                <div class="h-40 flex items-end justify-between space-x-2 pt-6">
+                    <div class="flex-1 bg-navy-deep/20 hover:bg-gold-champagne transition-colors h-[30%] relative group"><span class="absolute -top-5 text-[9px] w-full text-center hidden group-hover:block">₹2.1L</span></div>
+                    <div class="flex-1 bg-navy-deep/20 hover:bg-gold-champagne transition-colors h-[45%] relative group"><span class="absolute -top-5 text-[9px] w-full text-center hidden group-hover:block">₹3.4L</span></div>
+                    <div class="flex-1 bg-navy-deep/20 hover:bg-gold-champagne transition-colors h-[60%] relative group"><span class="absolute -top-5 text-[9px] w-full text-center hidden group-hover:block">₹4.8L</span></div>
+                    <div class="flex-1 bg-navy-deep/20 hover:bg-gold-champagne transition-colors h-[80%] relative group"><span class="absolute -top-5 text-[9px] w-full text-center hidden group-hover:block">₹6.2L</span></div>
+                    <div class="flex-1 bg-gold-champagne h-[100%] relative group"><span class="absolute -top-5 text-[9px] font-bold text-gold-champagne w-full text-center">₹18.4L</span></div>
+                </div>
+                <div class="flex justify-between text-[10px] uppercase text-slate-custom pt-2 border-t border-border-light">
+                    <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep 2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRINTABLE INVOICE MODAL -->
+    <div id="invoice-modal" class="fixed inset-0 z-50 bg-navy-midnight/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-3xl rounded-sm shadow-2xl border border-border-light overflow-hidden p-8 space-y-6 max-h-[90vh] overflow-y-auto" id="printable-invoice">
+            
+            <div class="flex justify-between items-start border-b-2 border-navy-deep pb-6">
+                <div>
+                    <h1 class="font-brand text-2xl text-navy-deep uppercase tracking-widest">THE HOROLOGY VAULT</h1>
+                    <p class="font-editorial italic text-xs text-gold-champagne">TIME, REFINED.</p>
+                    <p class="text-[11px] text-slate-custom mt-2">GSTIN: 27AABCT8891Q1ZM | High Luxury Watch Boutique</p>
+                </div>
+                <div class="text-right text-xs text-slate-custom space-y-1">
+                    <p class="font-mono font-bold text-navy-deep text-sm" id="inv-num">INV# THV-2026-847291</p>
+                    <p id="inv-date">Date: October 8, 2026</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 text-xs border-b border-border-light pb-6">
+                <div>
+                    <span class="font-bold uppercase text-navy-deep block mb-1">Billed To:</span>
+                    <p id="inv-cust-name" class="font-bold">Alexander Wright</p>
+                    <p id="inv-cust-addr">42 Platinum Towers, Worli Sea Face, Mumbai 400018</p>
+                    <p id="inv-cust-phone">+91 98765 43210</p>
+                </div>
+                <div>
+                    <span class="font-bold uppercase text-navy-deep block mb-1">Vault Dispatch Atelier:</span>
+                    <p>The Horology Vault Flagship</p>
+                    <p>303 Heritage Square, MG Road, Mumbai</p>
+                    <p>Support: concierge@horologyvault.com</p>
+                </div>
+            </div>
+
+            <!-- Product Table -->
+            <table class="w-full text-left text-xs divide-y divide-border-light">
+                <thead>
+                    <tr class="uppercase text-slate-custom font-bold">
+                        <th class="py-2">Item Description</th>
+                        <th class="py-2 text-center">Qty</th>
+                        <th class="py-2 text-right">Unit Price</th>
+                        <th class="py-2 text-right">Total Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="inv-items-table" class="divide-y divide-border-light/60">
+                    <!-- JS Populated -->
+                </tbody>
+            </table>
+
+            <div class="flex justify-end pt-4">
+                <div class="w-64 space-y-1 text-xs">
+                    <div class="flex justify-between"><span>Subtotal:</span><span id="inv-subtotal">₹0</span></div>
+                    <div class="flex justify-between text-emerald-600"><span>Coupon Savings:</span><span id="inv-discount">-₹0</span></div>
+                    <div class="flex justify-between"><span>GST (18%):</span><span id="inv-gst">₹0</span></div>
+                    <div class="flex justify-between font-bold text-sm text-navy-deep border-t border-navy-deep pt-2">
+                        <span>Total Paid:</span><span id="inv-grandtotal">₹0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-border-light pt-6 text-center text-[10px] text-slate-custom no-print space-x-4">
+                <button onclick="window.print()" class="btn-gold-shimmer px-6 py-2 uppercase font-bold text-xs rounded-sm">Print Invoice / Save PDF</button>
+                <button onclick="closeInvoiceModal()" class="px-6 py-2 border border-border-light uppercase font-bold text-xs rounded-sm">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION POPUP -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
+    <!-- JAVASCRIPT APPLICATION LOGIC -->
+    <script>
+        /* STORE CONFIGURATION OBJECT */
+        const STORE_CONFIG = {
+            currency: "INR",
+            currencySymbol: "₹",
+            gstRate: 0.18,
+            freeShippingThreshold: 25000,
+            standardShipping: 499,
+            expressShipping: 999,
+            premiumShipping: 1499
+        };
+
+        /* 20 REALISTIC LUXURY WATCHES DATABASE */
+        const PRODUCTS = [
+            {
+                id: 1,
+                name: "Aethelgard Chronograph Gold",
+                brand: "The Vault Private Label",
+                category: "Chronograph",
+                gender: "Men",
+                price: 249999,
+                originalPrice: 289999,
+                discount: 14,
+                rating: 4.9,
+                reviews: 38,
+                sku: "THV-ACG-001",
+                stock: 5,
+                movement: "Automatic",
+                caseMaterial: "18K Rose Gold",
+                caseSize: "41mm",
+                strapMaterial: "Alligator Leather",
+                waterResistance: "100m",
+                warranty: "2 Years International",
+                description: "Hand-assembled 18K rose gold chronograph with column-wheel mechanism and anti-reflective sapphire crystal.",
+                images: ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop"],
+                badge: "LIMITED"
+            },
+            {
+                id: 2,
+                name: "Vanguard Royal Steel Automatic",
+                brand: "Vanguard",
+                category: "Automatic",
+                gender: "Men",
+                price: 124999,
+                originalPrice: 149999,
+                discount: 16,
+                rating: 4.8,
+                reviews: 64,
+                sku: "THV-VRS-002",
+                stock: 12,
+                movement: "Automatic",
+                caseMaterial: "316L Stainless Steel",
+                caseSize: "40mm",
+                strapMaterial: "Steel Bracelet",
+                waterResistance: "150m",
+                warranty: "2 Years International",
+                description: "Integrated steel sport watch featuring an exquisite blue sunburst dial and 70-hour power reserve.",
+                images: ["https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=800&auto=format&fit=crop"],
+                badge: "BESTSELLER"
+            },
+            {
+                id: 3,
+                name: "Celeste Diamond Petite",
+                brand: "Celeste Genève",
+                category: "Dress",
+                gender: "Women",
+                price: 189999,
+                originalPrice: 219999,
+                discount: 13,
+                rating: 5.0,
+                reviews: 29,
+                sku: "THV-CDP-003",
+                stock: 4,
+                movement: "Quartz",
+                caseMaterial: "Diamond-Set Steel",
+                caseSize: "32mm",
+                strapMaterial: "Satin Calfskin",
+                waterResistance: "50m",
+                warranty: "2 Years International",
+                description: "Adorned with 48 brilliant-cut diamonds surrounding a mother-of-pearl guilloché dial.",
+                images: ["https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop"],
+                badge: "EXCLUSIVE"
+            },
+            {
+                id: 4,
+                name: "Oceanic Deep Diver 300M",
+                brand: "Aquaterra",
+                category: "Sports",
+                gender: "Men",
+                price: 74999,
+                originalPrice: 89999,
+                discount: 16,
+                rating: 4.7,
+                reviews: 92,
+                sku: "THV-ODD-004",
+                stock: 18,
+                movement: "Automatic",
+                caseMaterial: "Titanium",
+                caseSize: "43mm",
+                strapMaterial: "Vulcanized Rubber",
+                waterResistance: "300m",
+                warranty: "2 Years International",
+                description: "Professional grade titanium diver watch with helium escape valve and ceramic bezel.",
+                images: ["https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop"],
+                badge: "NEW"
+            },
+            {
+                id: 5,
+                name: "Heritage Tourbillon Grand Complication",
+                brand: "The Vault Private Label",
+                category: "Luxury",
+                gender: "Men",
+                price: 499999,
+                originalPrice: 599999,
+                discount: 16,
+                rating: 5.0,
+                reviews: 14,
+                sku: "THV-HTG-005",
+                stock: 2,
+                movement: "Automatic",
+                caseMaterial: "Platinum",
+                caseSize: "42mm",
+                strapMaterial: "Crocodile Leather",
+                waterResistance: "30m",
+                warranty: "5 Years International",
+                description: "Flying tourbillon with perpetual calendar and moonphase complexity.",
+                images: ["https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop"],
+                badge: "LIMITED"
+            },
+            {
+                id: 6,
+                name: "Seraphina Gold Mesh",
+                brand: "Celeste Genève",
+                category: "Dress",
+                gender: "Women",
+                price: 54999,
+                originalPrice: 64999,
+                discount: 15,
+                rating: 4.6,
+                reviews: 41,
+                sku: "THV-SGM-006",
+                stock: 15,
+                movement: "Quartz",
+                caseMaterial: "Gold PVD Steel",
+                caseSize: "34mm",
+                strapMaterial: "Milanese Gold Mesh",
+                waterResistance: "30m",
+                warranty: "2 Years International",
+                description: "Ultra-slim profile with woven gold mesh strap and minimalist hour markers.",
+                images: ["https://images.unsplash.com/photo-1533139502658-0198f920d8e8?q=80&w=800&auto=format&fit=crop"],
+                badge: "BESTSELLER"
+            },
+            {
+                id: 7,
+                name: "Junior Voyager Solar",
+                brand: "Vault Junior",
+                category: "Sports",
+                gender: "Children",
+                price: 24999,
+                originalPrice: 29999,
+                discount: 16,
+                rating: 4.9,
+                reviews: 23,
+                sku: "THV-JVS-007",
+                stock: 20,
+                movement: "Quartz",
+                caseMaterial: "Reinforced Composite",
+                caseSize: "36mm",
+                strapMaterial: "Durable Nylon Strap",
+                waterResistance: "100m",
+                warranty: "2 Years International",
+                description: "Shock-resistant solar powered timepiece built for adventure and young enthusiasts.",
+                images: ["https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800&auto=format&fit=crop"],
+                badge: "NEW"
+            },
+            {
+                id: 8,
+                name: "Monaco Racing Flyback",
+                brand: "Vanguard",
+                category: "Chronograph",
+                gender: "Men",
+                price: 189999,
+                originalPrice: 210000,
+                discount: 10,
+                rating: 4.8,
+                reviews: 55,
+                sku: "THV-MRF-008",
+                stock: 8,
+                movement: "Automatic",
+                caseMaterial: "Forged Carbon",
+                caseSize: "44mm",
+                strapMaterial: "Perforated Leather",
+                waterResistance: "100m",
+                warranty: "2 Years International",
+                description: "Flyback chronograph engineered with lightweight forged carbon fiber.",
+                images: ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop"],
+                badge: "EXCLUSIVE"
+            },
+            {
+                id: 9,
+                name: "Astral Moonphase Platinum",
+                brand: "The Vault Private Label",
+                category: "Luxury",
+                gender: "Men",
+                price: 349999,
+                originalPrice: 399999,
+                discount: 12,
+                rating: 5.0,
+                reviews: 19,
+                sku: "THV-AMP-009",
+                stock: 3,
+                movement: "Automatic",
+                caseMaterial: "950 Platinum",
+                caseSize: "40mm",
+                strapMaterial: "Alligator Leather",
+                waterResistance: "50m",
+                warranty: "3 Years International",
+                description: "Aventurine glass dial capturing the night sky with hand-carved gold moon disk.",
+                images: ["https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=800&auto=format&fit=crop"],
+                badge: "LIMITED"
+            },
+            {
+                id: 10,
+                name: "Elegance Diamond Blossom",
+                brand: "Celeste Genève",
+                category: "Luxury",
+                gender: "Women",
+                price: 249999,
+                originalPrice: 279999,
+                discount: 10,
+                rating: 4.9,
+                reviews: 32,
+                sku: "THV-EDB-010",
+                stock: 6,
+                movement: "Automatic",
+                caseMaterial: "18K White Gold",
+                caseSize: "35mm",
+                strapMaterial: "Satin Strap",
+                waterResistance: "30m",
+                warranty: "2 Years International",
+                description: "Blossom dial motif rendered in sapphire gems and high-clarity diamonds.",
+                images: ["https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop"],
+                badge: "BESTSELLER"
+            },
+            {
+                id: 11,
+                name: "Chronos Pilot Mk II",
+                brand: "Vanguard",
+                category: "Chronograph",
+                gender: "Men",
+                price: 89999,
+                originalPrice: 105000,
+                discount: 14,
+                rating: 4.7,
+                reviews: 78,
+                sku: "THV-CPM-011",
+                stock: 14,
+                movement: "Automatic",
+                caseMaterial: "Matte Stainless Steel",
+                caseSize: "42mm",
+                strapMaterial: "Calfskin Pilot Strap",
+                waterResistance: "100m",
+                warranty: "2 Years International",
+                description: "High contrast aviator dial with anti-magnetic soft iron inner cage.",
+                images: ["https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop"],
+                badge: "NEW"
+            },
+            {
+                id: 12,
+                name: "Lumière Pearl Minimalist",
+                brand: "Celeste Genève",
+                category: "Dress",
+                gender: "Women",
+                price: 39999,
+                originalPrice: 48999,
+                discount: 18,
+                rating: 4.6,
+                reviews: 48,
+                sku: "THV-LPM-012",
+                stock: 22,
+                movement: "Quartz",
+                caseMaterial: "Rose Gold Steel",
+                caseSize: "30mm",
+                strapMaterial: "Nude Leather",
+                waterResistance: "30m",
+                warranty: "2 Years International",
+                description: "Clean aesthetic with natural mother of pearl hour markers.",
+                images: ["https://images.unsplash.com/photo-1533139502658-0198f920d8e8?q=80&w=800&auto=format&fit=crop"],
+                badge: "SALE"
+            },
+            {
+                id: 13,
+                name: "Junior Cadet Digital Heritage",
+                brand: "Vault Junior",
+                category: "Sports",
+                gender: "Children",
+                price: 18999,
+                originalPrice: 22999,
+                discount: 17,
+                rating: 4.8,
+                reviews: 19,
+                sku: "THV-JCD-013",
+                stock: 25,
+                movement: "Quartz",
+                caseMaterial: "Resin Alloy",
+                caseSize: "34mm",
+                strapMaterial: "Silicone Strap",
+                waterResistance: "50m",
+                warranty: "2 Years International",
+                description: "Durable digital display with alarm, stopwatch, and EL backlight.",
+                images: ["https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800&auto=format&fit=crop"],
+                badge: "BESTSELLER"
+            },
+            {
+                id: 14,
+                name: "Submariner Pro GMT Ceramic",
+                brand: "Aquaterra",
+                category: "Sports",
+                gender: "Men",
+                price: 115000,
+                originalPrice: 130000,
+                discount: 11,
+                rating: 4.9,
+                reviews: 112,
+                sku: "THV-SPG-014",
+                stock: 9,
+                movement: "Automatic",
+                caseMaterial: "Oystersteel",
+                caseSize: "41mm",
+                strapMaterial: "Oyster Steel",
+                waterResistance: "200m",
+                warranty: "2 Years International",
+                description: "Dual time-zone GMT display with bi-color ceramic rotating bezel.",
+                images: ["https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop"],
+                badge: "BESTSELLER"
+            },
+            {
+                id: 15,
+                name: "Geneva Slimline Gold",
+                brand: "Celeste Genève",
+                category: "Dress",
+                gender: "Men",
+                price: 159999,
+                originalPrice: 179999,
+                discount: 11,
+                rating: 4.7,
+                reviews: 27,
+                sku: "THV-GSG-015",
+                stock: 7,
+                movement: "Automatic",
+                caseMaterial: "18K Yellow Gold",
+                caseSize: "38mm",
+                strapMaterial: "Black Alligator",
+                waterResistance: "30m",
+                warranty: "2 Years International",
+                description: "Ultra-thin automatic movement measuring just 6.8mm total thickness.",
+                images: ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop"],
+                badge: "EXCLUSIVE"
+            },
+            {
+                id: 16,
+                name: "Velox Skeleton Automatic",
+                brand: "The Vault Private Label",
+                category: "Automatic",
+                gender: "Men",
+                price: 219999,
+                originalPrice: 249999,
+                discount: 12,
+                rating: 4.9,
+                reviews: 43,
+                sku: "THV-VSA-016",
+                stock: 4,
+                movement: "Automatic",
+                caseMaterial: "Grade 5 Titanium",
+                caseSize: "42mm",
+                strapMaterial: "Rubber & Leather Hybrid",
+                waterResistance: "50m",
+                warranty: "3 Years International",
+                description: "Open-worked skeletonized dial revealing the intricate balance wheel heartbeat.",
+                images: ["https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=800&auto=format&fit=crop"],
+                badge: "LIMITED"
+            },
+            {
+                id: 17,
+                name: "Aura Diamond Solitaire",
+                brand: "Celeste Genève",
+                category: "Luxury",
+                gender: "Women",
+                price: 299999,
+                originalPrice: 349999,
+                discount: 14,
+                rating: 5.0,
+                reviews: 18,
+                sku: "THV-ADS-017",
+                stock: 2,
+                movement: "Quartz",
+                caseMaterial: "Platinum & Diamonds",
+                caseSize: "28mm",
+                strapMaterial: "Diamond Bracelet",
+                waterResistance: "30m",
+                warranty: "3 Years International",
+                description: "Jewelry timepiece encrusted with over 3 carats of VS1 diamonds.",
+                images: ["https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop"],
+                badge: "EXCLUSIVE"
+            },
+            {
+                id: 18,
+                name: "Regatta Master Regatta Chrono",
+                brand: "Aquaterra",
+                category: "Sports",
+                gender: "Men",
+                price: 135000,
+                originalPrice: 150000,
+                discount: 10,
+                rating: 4.8,
+                reviews: 36,
+                sku: "THV-RMR-018",
+                stock: 11,
+                movement: "Automatic",
+                caseMaterial: "Stainless Steel",
+                caseSize: "44mm",
+                strapMaterial: "Sailcloth Strap",
+                waterResistance: "100m",
+                warranty: "2 Years International",
+                description: "Yacht racing chronograph with programmable regatta countdown timer.",
+                images: ["https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop"],
+                badge: "NEW"
+            },
+            {
+                id: 19,
+                name: "Junior Star Explorer",
+                brand: "Vault Junior",
+                category: "Dress",
+                gender: "Children",
+                price: 21999,
+                originalPrice: 25999,
+                discount: 15,
+                rating: 4.7,
+                reviews: 15,
+                sku: "THV-JSE-019",
+                stock: 16,
+                movement: "Quartz",
+                caseMaterial: "Polished Steel",
+                caseSize: "32mm",
+                strapMaterial: "Fine Leather",
+                waterResistance: "30m",
+                warranty: "2 Years International",
+                description: "A refined classic watch designed for formal family occasions.",
+                images: ["https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=800&auto=format&fit=crop"],
+                badge: "NEW"
+            },
+            {
+                id: 20,
+                name: "Constantin Classic Automatic",
+                brand: "The Vault Private Label",
+                category: "Automatic",
+                gender: "Men",
+                price: 179999,
+                originalPrice: 199999,
+                discount: 10,
+                rating: 4.9,
+                reviews: 51,
+                sku: "THV-CCA-020",
+                stock: 8,
+                movement: "Automatic",
+                caseMaterial: "18K Yellow Gold",
+                caseSize: "39mm",
+                strapMaterial: "Hand-stitched Leather",
+                waterResistance: "50m",
+                warranty: "2 Years International",
+                description: "Roman numeral guilloché dial with blue heat-treated steel hands.",
+                images: ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop"],
+                badge: "BESTSELLER"
+            }
+        ];
+
+        /* APPLICATION STATE (PERSISTED WITH LOCALSTORAGE) */
+        let AppState = {
+            cart: JSON.parse(localStorage.getItem('thv_cart')) || [],
+            wishlist: JSON.parse(localStorage.getItem('thv_wishlist')) || [],
+            activeCoupon: null,
+            discountPercent: 0,
+            flatDiscount: 0,
+            currentOrder: null,
+            filters: {
+                search: '',
+                gender: 'All',
+                category: 'All',
+                maxPrice: 500000,
+                movement: 'All',
+                sort: 'featured'
+            }
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // Dismiss loading screen after 1s
+            setTimeout(() => {
+                const loader = document.getElementById('loading-screen');
+                if (loader) {
+                    loader.classList.add('opacity-0');
+                    setTimeout(() => loader.style.display = 'none', 700);
+                }
+            }, 800);
+
+            // Initialize views & data
+            updateBadges();
+            renderHomeProducts();
+            renderShopProducts();
+            renderWishlist();
+            initCountdown();
+
+            // Handle Hash Navigation
+            window.addEventListener('hashchange', handleRouting);
+            handleRouting();
+        });
+
+        /* ROUTING ENGINE */
+        function handleRouting() {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
+
+            const targetView = document.getElementById(`view-${hash}`);
+            if (targetView) {
+                targetView.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                document.getElementById('view-home').classList.remove('hidden');
+            }
+        }
+
+        function navigateTo(viewId) {
+            window.location.hash = viewId;
+        }
+
+        /* LOCALSTORAGE PERSISTENCE HELPERS */
+        function saveCart() {
+            localStorage.setItem('thv_cart', JSON.stringify(AppState.cart));
+            updateBadges();
+            renderCartDrawerItems();
+        }
+
+        function saveWishlist() {
+            localStorage.setItem('thv_wishlist', JSON.stringify(AppState.wishlist));
+            updateBadges();
+            renderWishlist();
+        }
+
+        function updateBadges() {
+            const cartCount = AppState.cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-badge').textContent = cartCount;
+            document.getElementById('wishlist-badge').textContent = AppState.wishlist.length;
+        }
+
+        /* FORMAT CURRENCY */
+        function formatINR(amount) {
+            return '₹' + amount.toLocaleString('en-IN');
+        }
+
+        /* TOAST NOTIFICATION SYSTEM */
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-navy-midnight text-ivory border border-gold-champagne px-4 py-3 rounded-sm shadow-xl text-xs font-semibold uppercase tracking-wider flex items-center space-x-2 pointer-events-auto transition-all duration-300 transform translate-y-4 opacity-0';
+            toast.innerHTML = `<span class="text-gold-champagne">❖</span><span>${message}</span>`;
+            
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        /* RENDER PRODUCT CARDS */
+        function createProductCardHTML(product) {
+            const isWishlisted = AppState.wishlist.some(id => id === product.id);
+            return `
+                <div class="group bg-white rounded-sm border border-border-light shadow-sm hover:shadow-xl hover:border-gold-champagne transition-all duration-500 flex flex-col justify-between overflow-hidden relative">
+                    ${product.badge ? `<span class="absolute top-3 left-3 z-10 bg-navy-midnight/90 border border-gold-champagne/40 text-gold-champagne text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm">${product.badge}</span>` : ''}
+                    
+                    <button onclick="toggleWishlist(${product.id})" class="absolute top-3 right-3 z-10 p-2 bg-white/80 backdrop-blur-sm rounded-full text-navy-deep hover:text-gold-champagne transition-colors shadow-sm">
+                        <svg class="w-4 h-4 ${isWishlisted ? 'fill-gold-champagne text-gold-champagne' : 'fill-none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </button>
+
+                    <div class="relative h-64 overflow-hidden bg-ivory cursor-pointer" onclick="openProductQuickView(${product.id})">
+                        <img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-navy-midnight/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="btn-gold-shimmer px-4 py-2 text-[10px] font-bold uppercase tracking-widest rounded-sm">Quick View</span>
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-gold-champagne font-bold block">${product.brand}</span>
+                            <h3 onclick="openProductQuickView(${product.id})" class="font-brand text-sm text-navy-deep hover:text-gold-champagne transition-colors cursor-pointer font-bold leading-tight mt-1 line-clamp-1">${product.name}</h3>
+                            <p class="text-[11px] text-slate-custom mt-1 line-clamp-2">${product.description}</p>
+                        </div>
+
+                        <div class="pt-2 border-t border-border-light flex items-center justify-between">
+                            <div>
+                                <span class="font-brand text-sm font-bold text-navy-deep block">${formatINR(product.price)}</span>
+                                ${product.originalPrice ? `<span class="text-[10px] text-slate-custom line-through">${formatINR(product.originalPrice)}</span>` : ''}
+                            </div>
+                            <button onclick="addToCart(${product.id})" class="px-3 py-2 bg-navy-deep text-ivory text-[10px] uppercase font-bold tracking-wider hover:bg-gold-champagne hover:text-navy-midnight transition-colors rounded-sm">
+                                Add To Vault
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderHomeProducts() {
+            const container = document.getElementById('home-products-grid');
+            if (!container) return;
+            const featured = PRODUCTS.slice(0, 8);
+            container.innerHTML = featured.map(p => createProductCardHTML(p)).join('');
+        }
+
+        /* SHOP FILTERING ENGINE */
+        function applyFilters() {
+            AppState.filters.search = document.getElementById('filter-search')?.value.toLowerCase() || '';
+            AppState.filters.gender = document.getElementById('filter-gender')?.value || 'All';
+            AppState.filters.category = document.getElementById('filter-category')?.value || 'All';
+            AppState.filters.movement = document.getElementById('filter-movement')?.value || 'All';
+            AppState.filters.sort = document.getElementById('shop-sort')?.value || 'featured';
+
+            let result = PRODUCTS.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(AppState.filters.search) || p.sku.toLowerCase().includes(AppState.filters.search) || p.category.toLowerCase().includes(AppState.filters.search);
+                const matchesGender = AppState.filters.gender === 'All' || p.gender === AppState.filters.gender;
+                const matchesCategory = AppState.filters.category === 'All' || p.category === AppState.filters.category;
+                const matchesMovement = AppState.filters.movement === 'All' || p.movement === AppState.filters.movement;
+                const matchesPrice = p.price <= AppState.filters.maxPrice;
+
+                return matchesSearch && matchesGender && matchesCategory && matchesMovement && matchesPrice;
+            });
+
+            // Sorting logic
+            if (AppState.filters.sort === 'price-low') {
+                result.sort((a, b) => a.price - b.price);
+            } else if (AppState.filters.sort === 'price-high') {
+                result.sort((a, b) => b.price - a.price);
+            } else if (AppState.filters.sort === 'rating') {
+                result.sort((a, b) => b.rating - a.rating);
+            }
+
+            renderShopProducts(result);
+        }
+
+        function updatePriceSlider(val) {
+            AppState.filters.maxPrice = parseInt(val);
+            document.getElementById('price-slider-val').textContent = formatINR(parseInt(val));
+        }
+
+        function filterByCategory(cat) {
+            navigateTo('shop');
+            const select = document.getElementById('filter-category');
+            if (select) select.value = cat;
+            applyFilters();
+        }
+
+        function filterByGender(gender) {
+            navigateTo('shop');
+            const select = document.getElementById('filter-gender');
+            if (select) select.value = gender;
+            applyFilters();
+        }
+
+        function filterByTag(tag) {
+            navigateTo('shop');
+            applyFilters();
+        }
+
+        function resetFilters() {
+            document.getElementById('filter-search').value = '';
+            document.getElementById('filter-gender').value = 'All';
+            document.getElementById('filter-category').value = 'All';
+            document.getElementById('filter-movement').value = 'All';
+            document.getElementById('filter-price').value = 500000;
+            updatePriceSlider(500000);
+            applyFilters();
+        }
+
+        function renderShopProducts(items = PRODUCTS) {
+            const container = document.getElementById('shop-products-grid');
+            const emptyState = document.getElementById('shop-empty-state');
+            const countLabel = document.getElementById('shop-active-count');
+
+            if (!container) return;
+
+            if (items.length === 0) {
+                container.innerHTML = '';
+                emptyState?.classList.remove('hidden');
+            } else {
+                emptyState?.classList.add('hidden');
+                container.innerHTML = items.map(p => createProductCardHTML(p)).join('');
+            }
+
+            if (countLabel) countLabel.textContent = `Showing ${items.length} Timepiece${items.length === 1 ? '' : 's'}`;
+        }
+
+        /* CART & WISHLIST LOGIC */
+        function addToCart(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = AppState.cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                AppState.cart.push({ ...product, quantity: 1 });
+            }
+
+            saveCart();
+            showToast(`Added ${product.name} to Vault.`);
+            toggleCartDrawer(true);
+        }
+
+        function removeFromCart(productId) {
+            AppState.cart = AppState.cart.filter(item => item.id !== productId);
+            saveCart();
+        }
+
+        function updateQuantity(productId, delta) {
+            const item = AppState.cart.find(i => i.id === productId);
+            if (!item) return;
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                saveCart();
+            }
+        }
+
+        function toggleWishlist(productId) {
+            const idx = AppState.wishlist.indexOf(productId);
+            if (idx > -1) {
+                AppState.wishlist.splice(idx, 1);
+                showToast("Removed timepiece from Wishlist.");
+            } else {
+                AppState.wishlist.push(productId);
+                showToast("Saved timepiece to Wishlist.");
+            }
+            saveWishlist();
+            renderHomeProducts();
+            renderShopProducts();
+        }
+
+        function renderWishlist() {
+            const container = document.getElementById('wishlist-grid');
+            const emptyState = document.getElementById('wishlist-empty');
+            if (!container) return;
+
+            const wishlistedProducts = PRODUCTS.filter(p => AppState.wishlist.includes(p.id));
+
+            if (wishlistedProducts.length === 0) {
+                container.innerHTML = '';
+                emptyState?.classList.remove('hidden');
+            } else {
+                emptyState?.classList.add('hidden');
+                container.innerHTML = wishlistedProducts.map(p => createProductCardHTML(p)).join('');
+            }
+        }
+
+        /* CART DRAWER DISPLAY & CALCULATION */
+        function toggleCartDrawer(openOnly = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const panel = document.getElementById('cart-panel');
+            if (!drawer || !panel) return;
+
+            if (openOnly) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.toggle('opacity-0');
+                drawer.classList.toggle('pointer-events-none');
+                panel.classList.toggle('translate-x-full');
+            }
+            renderCartDrawerItems();
+        }
+
+        function renderCartDrawerItems() {
+            const container = document.getElementById('cart-drawer-items');
+            if (!container) return;
+
+            if (AppState.cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 space-y-3">
+                        <svg class="w-12 h-12 text-gold-champagne mx-auto opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                        <p class="font-brand text-sm text-navy-deep uppercase">Your Vault Cart is Empty</p>
+                        <p class="text-xs text-slate-custom">Add fine timepieces to proceed.</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = AppState.cart.map(item => `
+                    <div class="flex items-center space-x-4 pt-4">
+                        <img src="${item.images[0]}" alt="${item.name}" class="w-16 h-16 object-cover rounded-sm border border-border-light bg-ivory">
+                        <div class="flex-1 space-y-1">
+                            <h4 class="font-brand text-xs font-bold text-navy-deep line-clamp-1">${item.name}</h4>
+                            <p class="text-[11px] text-gold-champagne font-bold">${formatINR(item.price)}</p>
+                            <div class="flex items-center space-x-2 pt-1">
+                                <button onclick="updateQuantity(${item.id}, -1)" class="w-5 h-5 bg-border-light text-navy-deep text-xs font-bold rounded-sm flex items-center justify-center">-</button>
+                                <span class="text-xs font-bold">${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, 1)" class="w-5 h-5 bg-border-light text-navy-deep text-xs font-bold rounded-sm flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" class="text-slate-custom hover:text-red-600 p-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            // Calculations
+            const subtotal = AppState.cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            let discount = 0;
+            if (AppState.discountPercent > 0) {
+                discount = (subtotal * AppState.discountPercent) / 100;
+            } else if (AppState.flatDiscount > 0) {
+                discount = Math.min(subtotal, AppState.flatDiscount);
+            }
+
+            const taxable = subtotal - discount;
+            const gst = taxable * STORE_CONFIG.gstRate;
+            const grandTotal = taxable + gst;
+
+            document.getElementById('cart-drawer-subtotal').textContent = formatINR(subtotal);
+            document.getElementById('cart-drawer-discount').textContent = `-${formatINR(discount)}`;
+            document.getElementById('cart-drawer-gst').textContent = formatINR(gst);
+            document.getElementById('cart-drawer-grandtotal').textContent = formatINR(grandTotal);
+
+            // Also sync checkout summary if on checkout page
+            syncCheckoutSummary(subtotal, discount, gst, grandTotal);
+        }
+
+        /* COUPON ENGINE */
+        function applyCoupon() {
+            const input = document.getElementById('coupon-code-input')?.value.trim().toUpperCase();
+            if (input === 'HOROLOGY10') {
+                AppState.discountPercent = 10;
+                AppState.flatDiscount = 0;
+                showToast("Applied HOROLOGY10 (10% Off)");
+            } else if (input === 'VAULT15') {
+                AppState.discountPercent = 15;
+                AppState.flatDiscount = 0;
+                showToast("Applied VAULT15 (15% Off)");
+            } else if (input === 'WELCOME2000') {
+                AppState.flatDiscount = 2000;
+                AppState.discountPercent = 0;
+                showToast("Applied WELCOME2000 (₹2,000 Off)");
+            } else {
+                showToast("Invalid Coupon Code.");
+            }
+            renderCartDrawerItems();
+        }
+
+        /* CALCULATORS LOGIC */
+        function calculateInvestment() {
+            const price = parseFloat(document.getElementById('calc-price').value) || 0;
+            const rate = parseFloat(document.getElementById('calc-rate').value) / 100 || 0;
+            const years = parseFloat(document.getElementById('calc-years').value) || 0;
+
+            const futureValue = price * Math.pow(1 + rate, years);
+            const profit = futureValue - price;
+
+            document.getElementById('res-future-val').textContent = formatINR(Math.round(futureValue));
+            document.getElementById('res-profit').textContent = '+' + formatINR(Math.round(profit));
+        }
+
+        function calculatePriceBreakdown() {
+            const base = parseFloat(document.getElementById('calc-base').value) || 0;
+            const disc = parseFloat(document.getElementById('calc-disc').value) || 0;
+            const ship = parseFloat(document.getElementById('calc-ship').value) || 0;
+
+            const discounted = base - (base * disc / 100);
+            const gst = discounted * STORE_CONFIG.gstRate;
+            const total = discounted + gst + ship;
+
+            document.getElementById('res-total-payable').textContent = formatINR(Math.round(total));
+        }
+
+        function scrollToCalculators() {
+            const el = document.getElementById('calculators');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        /* QUICK VIEW MODAL */
+        function openProductQuickView(productId) {
+            const p = PRODUCTS.find(item => item.id === productId);
+            if (!p) return;
+
+            const container = document.getElementById('quickview-content');
+            container.innerHTML = `
+                <div class="bg-ivory rounded-sm overflow-hidden flex items-center justify-center p-4">
+                    <img src="${p.images[0]}" alt="${p.name}" class="w-full h-80 object-cover rounded-sm">
+                </div>
+                <div class="space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs uppercase font-bold text-gold-champagne tracking-widest">${p.brand} • ${p.category}</span>
+                        <h2 class="font-brand text-xl text-navy-deep font-bold mt-1">${p.name}</h2>
+                        <div class="flex items-center space-x-2 mt-2">
+                            <span class="font-brand text-2xl font-bold text-navy-deep">${formatINR(p.price)}</span>
+                            ${p.originalPrice ? `<span class="text-xs text-slate-custom line-through">${formatINR(p.originalPrice)}</span>` : ''}
+                        </div>
+                        <p class="text-xs text-slate-custom mt-3 leading-relaxed">${p.description}</p>
+                        
+                        <div class="grid grid-cols-2 gap-2 mt-4 text-[11px] bg-ivory p-3 rounded-sm border border-border-light">
+                            <div><strong class="text-navy-deep">Movement:</strong> ${p.movement}</div>
+                            <div><strong class="text-navy-deep">Case Size:</strong> ${p.caseSize}</div>
+                            <div><strong class="text-navy-deep">Case Material:</strong> ${p.caseMaterial}</div>
+                            <div><strong class="text-navy-deep">Water Resistance:</strong> ${p.waterResistance}</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 pt-4 border-t border-border-light">
+                        <button onclick="addToCart(${p.id}); closeQuickViewModal();" class="btn-gold-shimmer w-full py-3 text-xs font-bold uppercase tracking-widest rounded-sm">
+                            Add To Vault Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('quickview-modal').classList.remove('hidden');
+        }
+
+        function closeQuickViewModal() {
+            document.getElementById('quickview-modal').classList.add('hidden');
+        }
+
+        /* SEARCH MODAL LOGIC */
+        function toggleSearchModal() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.getElementById('live-search-input').focus();
+            }
+        }
+
+        function handleLiveSearch(query) {
+            const resultsBox = document.getElementById('live-search-results');
+            if (!query.trim()) {
+                resultsBox.classList.add('hidden');
+                return;
+            }
+
+            const matches = PRODUCTS.filter(p => p.name.toLowerCase().includes(query.toLowerCase()) || p.brand.toLowerCase().includes(query.toLowerCase()));
+            if (matches.length === 0) {
+                resultsBox.innerHTML = `<div class="p-4 text-xs text-slate-custom">No matching timepieces found.</div>`;
+            } else {
+                resultsBox.innerHTML = matches.map(p => `
+                    <div onclick="openProductQuickView(${p.id}); toggleSearchModal();" class="p-3 hover:bg-ivory cursor-pointer flex items-center justify-between">
+                        <div>
+                            <span class="font-brand text-xs font-bold text-navy-deep block">${p.name}</span>
+                            <span class="text-[10px] text-gold-champagne">${p.brand}</span>
+                        </div>
+                        <span class="font-brand text-xs font-bold">${formatINR(p.price)}</span>
+                    </div>
+                `).join('');
+            }
+            resultsBox.classList.remove('hidden');
+        }
+
+        /* CHECKOUT & ORDER SUMMARY SYNCHRONIZATION */
+        function syncCheckoutSummary(subtotal, discount, gst, grandTotal) {
+            const itemsContainer = document.getElementById('checkout-summary-items');
+            if (itemsContainer) {
+                itemsContainer.innerHTML = AppState.cart.map(i => `
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="truncate max-w-[200px] text-ivory/90">${i.name} (x${i.quantity})</span>
+                        <span class="font-bold text-gold-champagne">${formatINR(i.price * i.quantity)}</span>
+                    </div>
+                `).join('');
+            }
+
+            document.getElementById('chk-subtotal').textContent = formatINR(subtotal);
+            document.getElementById('chk-discount').textContent = `-${formatINR(discount)}`;
+            document.getElementById('chk-gst').textContent = formatINR(gst);
+            document.getElementById('chk-grandtotal').textContent = formatINR(grandTotal);
+        }
+
+        function processOrderPlacement() {
+            if (AppState.cart.length === 0) {
+                showToast("Your cart is empty!");
+                return;
+            }
+
+            const randomId = "THV-2026-" + Math.floor(100000 + Math.random() * 900000);
+            const fname = document.getElementById('chk-fname').value;
+            const lname = document.getElementById('chk-lname').value;
+            const address = document.getElementById('chk-address').value;
+            const city = document.getElementById('chk-city').value;
+            const phone = document.getElementById('chk-phone').value;
+
+            const subtotal = AppState.cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            let discount = AppState.discountPercent ? (subtotal * AppState.discountPercent / 100) : AppState.flatDiscount;
+            const gst = (subtotal - discount) * STORE_CONFIG.gstRate;
+            const total = (subtotal - discount) + gst;
+
+            AppState.currentOrder = {
+                id: randomId,
+                customer: `${fname} ${lname}`,
+                address: `${address}, ${city}`,
+                phone: phone,
+                items: [...AppState.cart],
+                subtotal: subtotal,
+                discount: discount,
+                gst: gst,
+                total: total,
+                date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+            };
+
+            // Clear cart
+            AppState.cart = [];
+            saveCart();
+
+            document.getElementById('conf-order-id').textContent = randomId;
+            document.getElementById('conf-total').textContent = formatINR(total);
+
+            navigateTo('confirmation');
+            showToast("Order Placed Successfully!");
+        }
+
+        /* INVOICE MODAL */
+        function openInvoiceModal() {
+            const o = AppState.currentOrder;
+            if (!o) return;
+
+            document.getElementById('inv-num').textContent = `INV# ${o.id}`;
+            document.getElementById('inv-date').textContent = `Date: ${o.date}`;
+            document.getElementById('inv-cust-name').textContent = o.customer;
+            document.getElementById('inv-cust-addr').textContent = o.address;
+            document.getElementById('inv-cust-phone').textContent = o.phone;
+
+            const table = document.getElementById('inv-items-table');
+            table.innerHTML = o.items.map(i => `
+                <tr>
+                    <td class="py-2">${i.name} (${i.sku})</td>
+                    <td class="py-2 text-center">${i.quantity}</td>
+                    <td class="py-2 text-right">${formatINR(i.price)}</td>
+                    <td class="py-2 text-right">${formatINR(i.price * i.quantity)}</td>
+                </tr>
+            `).join('');
+
+            document.getElementById('inv-subtotal').textContent = formatINR(o.subtotal);
+            document.getElementById('inv-discount').textContent = `-${formatINR(o.discount)}`;
+            document.getElementById('inv-gst').textContent = formatINR(o.gst);
+            document.getElementById('inv-grandtotal').textContent = formatINR(o.total);
+
+            document.getElementById('invoice-modal').classList.remove('hidden');
+        }
+
+        function closeInvoiceModal() {
+            document.getElementById('invoice-modal').classList.add('hidden');
+        }
+
+        /* ADMIN DASHBOARD MODAL */
+        function openAdminDashboard() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        /* ANNOUNCEMENT BAR DISMISS */
+        function dismissAnnouncement() {
+            document.getElementById('announcement-bar').style.display = 'none';
+        }
+
+        /* MOBILE MENU TOGGLE */
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        /* LIMITED EDITION COUNTDOWN TIMER */
+        function initCountdown() {
+            let seconds = 2 * 86400 + 14 * 3600 + 32 * 60 + 18;
+            setInterval(() => {
+                seconds--;
+                if (seconds < 0) seconds = 0;
+                const d = Math.floor(seconds / 86400);
+                const h = Math.floor((seconds % 86400) / 3600);
+                const m = Math.floor((seconds % 3600) / 60);
+                const s = seconds % 60;
+
+                if (document.getElementById('cd-days')) {
+                    document.getElementById('cd-days').textContent = d.toString().padStart(2, '0');
+                    document.getElementById('cd-hours').textContent = h.toString().padStart(2, '0');
+                    document.getElementById('cd-mins').textContent = m.toString().padStart(2, '0');
+                    document.getElementById('cd-secs').textContent = s.toString().padStart(2, '0');
+                }
+            }, 1000);
+        }
+
+        /* HERO SLIDER CONTROLS */
+        function prevHeroSlide() { showToast("Viewing Previous Collection Showcase"); }
+        function nextHeroSlide() { showToast("Viewing Next Collection Showcase"); }
+    </script>
+</body>
+</html>
